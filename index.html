@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>پخش زنده</title>
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
@@ -16,19 +20,38 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body dir="rtl">
     <style>
+      body {
+        background-color: #0e2835;
+      }
       #video {
         height: 200px;
+      }
+      a {
+        text-decoration: none;
+        color: aliceblue;
       }
       .images {
         size: 300px;
         width: 300px;
         height: auto;
       }
+      .nav-menu {
+        display: flex;
+      }
+      .nav-menu li {
+        color: #c8d0f1;
+        font-size: 11px;
+        padding-left: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
       .border {
         border-color: #6563e6;
-        border-radius: 30px;
+        border-radius: 24px;
       }
       .videos {
         display: flex;
@@ -39,20 +62,378 @@
 
         border: 1px solid #6563e6;
       }
+      .logo-header {
+        max-width: 100%;
+        max-height: 50px;
+      }
+      .sl-nav li {
+        list-style: none;
+        position: relative;
+        display: inline-block;
+      }
+      .center-div {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+      }
+      .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .login {
+        border: solid 1px;
+        border-radius: 15px;
+        color: #ffffff;
+        padding: 9px;
+        align-content: center;
+      }
+      .search-but {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: transparent;
+        color: whitesmoke;
+      }
+      .form-control {
+        border-radius: 30px;
+      }
+      .header-container {
+        margin: 0px 32px;
+      }
+      .header-nav {
+        margin-top: 46px;
+        border: solid 1px;
+      }
     </style>
-    <div class="navbar row col-10 border d-flex p-3">
-      <div class="col-2 border d-flex justify-content-center gap-5">
-        <button>sign in/out</button>
-        <p>fa/en</p>
+    <header>
+      <div class="header-container">
+        <div class="row header-nav border d-flex p-2">
+          <div class="col-2 align-self-center">
+            <a href=""><img src="./items/R.jfif" class="logo-header" /></a>
+          </div>
+          <div class="col-6 d-flex align-items-center justify-content-center">
+            <ul class="nav-menu">
+              <li>
+                <a href="https://tv.razavi.ir/fa" class="a-header">
+                  <svg
+                    class="icon-size"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.3584 6.67501L11.9001 2.30834C10.8334 1.45834 9.16672 1.45001 8.10838 2.30001L2.65005 6.67501C1.86672 7.30001 1.39172 8.55 1.55838 9.53334L2.60838 15.8167C2.85005 17.225 4.15838 18.3333 5.58338 18.3333H14.4167C15.8251 18.3333 17.1584 17.2 17.4001 15.8083L18.4501 9.52501C18.6001 8.55001 18.1251 7.30001 17.3584 6.67501ZM10.6251 15C10.6251 15.3417 10.3417 15.625 10.0001 15.625C9.65838 15.625 9.37505 15.3417 9.37505 15V12.5C9.37505 12.1583 9.65838 11.875 10.0001 11.875C10.3417 11.875 10.6251 12.1583 10.6251 12.5V15Z"
+                      fill="#F4F4F4"
+                    ></path>
+                  </svg>
+                  خانه
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://tv.razavi.ir/fa/video-list/4/%D9%86%D9%85%D8%A7%D9%87%D9%86%DA%AF"
+                  class="a-header"
+                >
+                  <svg
+                    class="icon-size"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.5 18.9583H7.49996C2.97496 18.9583 1.04163 17.025 1.04163 12.5V7.49999C1.04163 2.97499 2.97496 1.04166 7.49996 1.04166H12.5C17.025 1.04166 18.9583 2.97499 18.9583 7.49999V12.5C18.9583 17.025 17.025 18.9583 12.5 18.9583ZM7.49996 2.29166C3.65829 2.29166 2.29163 3.65832 2.29163 7.49999V12.5C2.29163 16.3417 3.65829 17.7083 7.49996 17.7083H12.5C16.3416 17.7083 17.7083 16.3417 17.7083 12.5V7.49999C17.7083 3.65832 16.3416 2.29166 12.5 2.29166H7.49996Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M17.9 14.8833H2.09998C1.75831 14.8833 1.47498 14.6 1.47498 14.2583C1.47498 13.9167 1.75831 13.6333 2.09998 13.6333H17.9C18.2416 13.6333 18.525 13.9167 18.525 14.2583C18.525 14.6 18.25 14.8833 17.9 14.8833Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M17.9 6.54999H2.09998C1.75831 6.54999 1.47498 6.26665 1.47498 5.92499C1.47498 5.58332 1.74998 5.29999 2.09998 5.29999H17.9C18.2416 5.29999 18.525 5.58332 18.525 5.92499C18.525 6.26665 18.25 6.54999 17.9 6.54999Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M5.80835 18.5083C5.46668 18.5083 5.18335 18.225 5.18335 17.8833V14.2583C5.18335 13.9167 5.46668 13.6333 5.80835 13.6333C6.15002 13.6333 6.43335 13.9167 6.43335 14.2583V17.8833C6.43335 18.2333 6.15002 18.5083 5.80835 18.5083Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M10 18.9333C9.65833 18.9333 9.375 18.65 9.375 18.3083V14.2583C9.375 13.9167 9.65833 13.6333 10 13.6333C10.3417 13.6333 10.625 13.9167 10.625 14.2583V18.3083C10.625 18.65 10.3417 18.9333 10 18.9333Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M14.1417 18.5583C13.8001 18.5583 13.5167 18.275 13.5167 17.9333V14.2583C13.5167 13.9167 13.8001 13.6333 14.1417 13.6333C14.4834 13.6333 14.7667 13.9167 14.7667 14.2583V17.9333C14.7667 18.2833 14.4834 18.5583 14.1417 18.5583Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M5.80835 6.00833C5.46668 6.00833 5.18335 5.725 5.18335 5.38333V1.75833C5.18335 1.41666 5.46668 1.13333 5.80835 1.13333C6.15002 1.13333 6.43335 1.41666 6.43335 1.75833V5.38333C6.43335 5.73333 6.15002 6.00833 5.80835 6.00833Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M10 6.43333C9.65833 6.43333 9.375 6.15 9.375 5.80833V1.75833C9.375 1.41666 9.65833 1.13333 10 1.13333C10.3417 1.13333 10.625 1.41666 10.625 1.75833V5.80833C10.625 6.15 10.3417 6.43333 10 6.43333Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M10 15.65C9.65833 15.65 9.375 15.3667 9.375 15.025V5.85834C9.375 5.51667 9.65833 5.23334 10 5.23334C10.3417 5.23334 10.625 5.51667 10.625 5.85834V15.025C10.625 15.3667 10.3417 15.65 10 15.65Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M14.1417 6.05833C13.8001 6.05833 13.5167 5.775 13.5167 5.43333V1.75833C13.5167 1.41666 13.8001 1.13333 14.1417 1.13333C14.4834 1.13333 14.7667 1.41666 14.7667 1.75833V5.43333C14.7667 5.78333 14.4834 6.05833 14.1417 6.05833Z"
+                      fill="#F4F4F4"
+                    ></path>
+                  </svg>
+                  نماهنگ
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://tv.razavi.ir/fa/video-list/3/%D9%BE%D8%A7%D8%AF%DA%A9%D8%B3%D8%AA"
+                  class="a-header"
+                >
+                  <svg
+                    class="icon-size"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.17511 16.4583C5.95844 16.4583 4.97512 15.475 4.97512 14.2583V8.58332H4.80845C2.72511 8.58332 1.03345 6.89168 1.03345 4.80835C1.03345 2.72502 2.72511 1.03333 4.80845 1.03333H6.38346C8.03346 1.03333 9.36678 2.37501 9.36678 4.01667V14.25C9.37512 15.475 8.39178 16.4583 7.17511 16.4583ZM4.81679 2.29167C3.42512 2.29167 2.29179 3.42502 2.29179 4.81669C2.29179 6.20836 3.42512 7.34167 4.81679 7.34167H5.60847C5.95013 7.34167 6.23347 7.625 6.23347 7.96667V14.2667C6.23347 14.7917 6.65845 15.2167 7.18345 15.2167C7.70845 15.2167 8.13346 14.7917 8.13346 14.2667V4.03336C8.13346 3.07502 7.35845 2.30001 6.40012 2.30001H4.81679V2.29167Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M4.81654 6.22502C4.04154 6.22502 3.4082 5.59172 3.4082 4.80839C3.4082 4.02506 4.04154 3.40005 4.81654 3.40005C5.15821 3.40005 5.44154 3.68339 5.44154 4.02505C5.44154 4.36672 5.15821 4.65006 4.81654 4.65006C4.72487 4.65006 4.6582 4.72506 4.6582 4.80839C4.6582 4.89172 4.73321 4.97502 4.81654 4.97502C5.15821 4.97502 5.44154 5.25835 5.44154 5.60002C5.44154 5.94168 5.15821 6.22502 4.81654 6.22502Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M12.825 16.4583C11.6083 16.4583 10.625 15.475 10.625 14.2583V4.025C10.625 2.375 11.9667 1.04166 13.6083 1.04166H15.1833C17.2667 1.04166 18.9583 2.73335 18.9583 4.81668C18.9583 6.90001 17.2667 8.59165 15.1833 8.59165H15.0167V14.2667C15.025 15.475 14.0333 16.4583 12.825 16.4583ZM13.6083 2.29166C12.65 2.29166 11.875 3.06667 11.875 4.025V14.2583C11.875 14.7833 12.3 15.2083 12.825 15.2083C13.35 15.2083 13.775 14.7833 13.775 14.2583V7.95831C13.775 7.61665 14.0583 7.33331 14.4 7.33331H15.1917C16.5833 7.33331 17.7167 6.20001 17.7167 4.80834C17.7167 3.41667 16.5833 2.28331 15.1917 2.28331H13.6083V2.29166Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M15.1831 6.22502C14.8414 6.22502 14.5581 5.94168 14.5581 5.60002C14.5581 5.25835 14.8414 4.97502 15.1831 4.97502C15.2748 4.97502 15.3414 4.90006 15.3414 4.80839C15.3414 4.71672 15.2664 4.65006 15.1831 4.65006C14.8414 4.65006 14.5581 4.36672 14.5581 4.02505C14.5581 3.68339 14.8414 3.40005 15.1831 3.40005C15.9581 3.40005 16.5914 4.03339 16.5914 4.80839C16.5914 5.58339 15.9664 6.22502 15.1831 6.22502Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M7.08325 18.9583C6.74159 18.9583 6.45825 18.675 6.45825 18.3333V15.8333C6.45825 15.4917 6.74159 15.2083 7.08325 15.2083C7.42492 15.2083 7.70825 15.4917 7.70825 15.8333V18.3333C7.70825 18.675 7.42492 18.9583 7.08325 18.9583Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M12.9167 18.9583C12.5751 18.9583 12.2917 18.675 12.2917 18.3333V15.8333C12.2917 15.4917 12.5751 15.2083 12.9167 15.2083C13.2584 15.2083 13.5417 15.4917 13.5417 15.8333V18.3333C13.5417 18.675 13.2584 18.9583 12.9167 18.9583Z"
+                      fill="#F4F4F4"
+                    ></path>
+                  </svg>
+                  پادکست
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://tv.razavi.ir/fa/poyesh-category/list"
+                  class="a-header"
+                >
+                  <svg
+                    class="icon-size"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.63289 9.68332C7.60789 9.68332 7.59123 9.68332 7.56623 9.68332C7.52456 9.67499 7.46623 9.67499 7.41623 9.68332C4.99956 9.60832 3.17456 7.70832 3.17456 5.36666C3.17456 2.98332 5.11623 1.04166 7.49956 1.04166C9.88289 1.04166 11.8246 2.98332 11.8246 5.36666C11.8162 7.70832 9.98289 9.60832 7.65789 9.68332C7.64956 9.68332 7.64123 9.68332 7.63289 9.68332ZM7.49956 2.29166C5.80789 2.29166 4.42456 3.67499 4.42456 5.36666C4.42456 7.03332 5.72456 8.37499 7.38289 8.43332C7.43289 8.42499 7.54123 8.42499 7.64956 8.43332C9.28289 8.35832 10.5662 7.01666 10.5746 5.36666C10.5746 3.67499 9.19123 2.29166 7.49956 2.29166Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M13.783 9.79168C13.758 9.79168 13.733 9.79168 13.708 9.78334C13.3663 9.81668 13.0163 9.57501 12.983 9.23334C12.9496 8.89168 13.158 8.58334 13.4996 8.54168C13.5996 8.53334 13.708 8.53334 13.7996 8.53334C15.0163 8.46668 15.9663 7.46668 15.9663 6.24168C15.9663 4.97501 14.9413 3.95001 13.6746 3.95001C13.333 3.95834 13.0496 3.67501 13.0496 3.33334C13.0496 2.99168 13.333 2.70834 13.6746 2.70834C15.6246 2.70834 17.2163 4.30001 17.2163 6.25001C17.2163 8.16668 15.7163 9.71668 13.808 9.79168C13.7996 9.79168 13.7913 9.79168 13.783 9.79168Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M7.64134 18.7917C6.00801 18.7917 4.36634 18.375 3.12467 17.5417C1.96634 16.775 1.33301 15.725 1.33301 14.5833C1.33301 13.4417 1.96634 12.3833 3.12467 11.6083C5.62467 9.95001 9.67467 9.95001 12.158 11.6083C13.308 12.375 13.9497 13.425 13.9497 14.5667C13.9497 15.7083 13.3163 16.7667 12.158 17.5417C10.908 18.375 9.27467 18.7917 7.64134 18.7917ZM3.81634 12.6583C3.01634 13.1917 2.58301 13.875 2.58301 14.5917C2.58301 15.3 3.02467 15.9833 3.81634 16.5083C5.89134 17.9 9.39134 17.9 11.4663 16.5083C12.2663 15.975 12.6997 15.2917 12.6997 14.575C12.6997 13.8667 12.258 13.1833 11.4663 12.6583C9.39134 11.275 5.89134 11.275 3.81634 12.6583Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M15.283 17.2917C14.9913 17.2917 14.733 17.0917 14.6746 16.7917C14.608 16.45 14.8246 16.125 15.158 16.05C15.683 15.9417 16.1663 15.7333 16.5413 15.4417C17.0163 15.0833 17.2746 14.6333 17.2746 14.1583C17.2746 13.6833 17.0163 13.2333 16.5496 12.8833C16.183 12.6 15.7246 12.4 15.183 12.275C14.8496 12.2 14.633 11.8667 14.708 11.525C14.783 11.1917 15.1163 10.975 15.458 11.05C16.1746 11.2083 16.7996 11.4917 17.308 11.8833C18.083 12.4667 18.5246 13.2917 18.5246 14.1583C18.5246 15.025 18.0746 15.85 17.2996 16.4417C16.783 16.8417 16.133 17.1333 15.4163 17.275C15.3663 17.2917 15.3246 17.2917 15.283 17.2917Z"
+                      fill="#F4F4F4"
+                    ></path>
+                  </svg>
+                  بخش تعاملی
+                </a>
+              </li>
+              <li>
+                <a href="#دلنوشته" class="a-header">
+                  <svg
+                    class="icon-size"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.0001 19.0083C9.42508 19.0083 8.88341 18.7167 8.50008 18.2083L7.25008 16.5417C7.22508 16.5083 7.12508 16.4583 7.07508 16.4583H6.66675C3.19175 16.4583 1.04175 15.5167 1.04175 10.8333V6.66666C1.04175 2.98332 2.98341 1.04166 6.66675 1.04166H10.0001C10.3417 1.04166 10.6251 1.32499 10.6251 1.66666C10.6251 2.00832 10.3417 2.29166 10.0001 2.29166H6.66675C3.68341 2.29166 2.29175 3.68332 2.29175 6.66666V10.8333C2.29175 14.6 3.58341 15.2083 6.66675 15.2083H7.08341C7.50841 15.2083 7.99175 15.45 8.25008 15.7917L9.50008 17.4583C9.79175 17.8417 10.2084 17.8417 10.5001 17.4583L11.7501 15.7917C12.0251 15.425 12.4584 15.2083 12.9167 15.2083H13.3334C16.3167 15.2083 17.7084 13.8167 17.7084 10.8333V6.66666C17.7084 6.32499 17.9917 6.04166 18.3334 6.04166C18.6751 6.04166 18.9584 6.32499 18.9584 6.66666V10.8333C18.9584 14.5167 17.0167 16.4583 13.3334 16.4583H12.9167C12.8501 16.4583 12.7917 16.4917 12.7501 16.5417L11.5001 18.2083C11.1167 18.7167 10.5751 19.0083 10.0001 19.0083Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M10.0001 10C9.53341 10 9.16675 9.62501 9.16675 9.16668C9.16675 8.70834 9.54175 8.33334 10.0001 8.33334C10.4584 8.33334 10.8334 8.70834 10.8334 9.16668C10.8334 9.62501 10.4667 10 10.0001 10Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M13.3333 10C12.8667 10 12.5 9.62501 12.5 9.16668C12.5 8.70834 12.875 8.33334 13.3333 8.33334C13.7917 8.33334 14.1667 8.70834 14.1667 9.16668C14.1667 9.62501 13.8 10 13.3333 10Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M6.66659 10C6.19992 10 5.83325 9.62501 5.83325 9.16668C5.83325 8.70834 6.20825 8.33334 6.66659 8.33334C7.12492 8.33334 7.49992 8.70834 7.49992 9.16668C7.49992 9.62501 7.13325 10 6.66659 10Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M15.0001 6.45834C14.2835 6.45834 12.5918 5.60835 12.0751 4.05001C11.8668 3.43335 11.9168 2.72501 12.2085 2.16668C12.4668 1.66668 12.9001 1.30001 13.4335 1.13335C13.9751 0.966679 14.5501 1.04168 15.0001 1.31668C15.4501 1.04168 16.0251 0.966679 16.5751 1.13335C17.1085 1.30001 17.5418 1.66668 17.8001 2.16668C18.0918 2.72501 18.1418 3.43335 17.9335 4.05001C17.4085 5.63335 15.6418 6.45834 15.0001 6.45834ZM13.2585 3.65001C13.6085 4.70001 14.8001 5.18334 15.0168 5.20834C15.2585 5.18334 16.4251 4.64168 16.7501 3.65835C16.8501 3.35835 16.8251 3.00001 16.6918 2.74168C16.5835 2.53335 16.4251 2.40001 16.2085 2.33335C15.9751 2.25001 15.6585 2.29168 15.5168 2.50001C15.4001 2.66668 15.2168 2.76668 15.0168 2.77501C14.8168 2.77501 14.6251 2.68335 14.5001 2.52501C14.3251 2.30001 14.0168 2.26668 13.7918 2.33335C13.5751 2.40001 13.4168 2.53335 13.3085 2.74168C13.1835 3.00001 13.1585 3.35001 13.2585 3.65001Z"
+                      fill="#F4F4F4"
+                    ></path>
+                  </svg>
+                  دلنوشته
+                </a>
+              </li>
+              <li class="last-li">
+                <a href="https://tv.razavi.ir/fa/contact-us" class="a-header">
+                  <svg
+                    class="icon-size"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.1667 17.7083H5.83341C5.49175 17.7083 5.20841 17.425 5.20841 17.0833C5.20841 16.7417 5.49175 16.4583 5.83341 16.4583H14.1667C16.5501 16.4583 17.7084 15.3 17.7084 12.9167V7.08332C17.7084 4.69999 16.5501 3.54166 14.1667 3.54166H5.83341C3.45008 3.54166 2.29175 4.69999 2.29175 7.08332C2.29175 7.42499 2.00841 7.70832 1.66675 7.70832C1.32508 7.70832 1.04175 7.42499 1.04175 7.08332C1.04175 4.04166 2.79175 2.29166 5.83341 2.29166H14.1667C17.2084 2.29166 18.9584 4.04166 18.9584 7.08332V12.9167C18.9584 15.9583 17.2084 17.7083 14.1667 17.7083Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M9.99973 10.725C9.29973 10.725 8.5914 10.5083 8.04974 10.0666L5.4414 7.98331C5.17473 7.76664 5.12474 7.37497 5.3414 7.10831C5.55807 6.84164 5.94973 6.79164 6.21639 7.00831L8.82473 9.09164C9.45806 9.59998 10.5331 9.59998 11.1664 9.09164L13.7747 7.00831C14.0414 6.79164 14.4414 6.83331 14.6497 7.10831C14.8664 7.37497 14.8247 7.77498 14.5497 7.98331L11.9414 10.0666C11.4081 10.5083 10.6997 10.725 9.99973 10.725Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M6.66675 14.375H1.66675C1.32508 14.375 1.04175 14.0917 1.04175 13.75C1.04175 13.4083 1.32508 13.125 1.66675 13.125H6.66675C7.00841 13.125 7.29175 13.4083 7.29175 13.75C7.29175 14.0917 7.00841 14.375 6.66675 14.375Z"
+                      fill="#F4F4F4"
+                    ></path>
+                    <path
+                      d="M4.16675 11.0417H1.66675C1.32508 11.0417 1.04175 10.7583 1.04175 10.4167C1.04175 10.075 1.32508 9.79166 1.66675 9.79166H4.16675C4.50841 9.79166 4.79175 10.075 4.79175 10.4167C4.79175 10.7583 4.50841 11.0417 4.16675 11.0417Z"
+                      fill="#F4F4F4"
+                    ></path>
+                  </svg>
+                  ارتباط با ما
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-4 d-flex justify-content-center gap-5">
+            <div class="col-6 center-div">
+              <button class="search-but" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+              <form
+                class="center-div gap-1"
+                action="https://tv.razavi.ir/fa/search"
+                method="get"
+              >
+                <input
+                  width="20px"
+                  class="search-input form-control"
+                  name="item"
+                  type="text"
+                  placeholder="جستجو کنید"
+                />
+              </form>
+            </div>
+            <div
+              class="col-6 center-div d-flex align-items-center justify-content-center"
+            >
+              <div class="col-4">
+                <div class="sl-nav">
+                  <ul>
+                    <li class="center-div">
+                      <svg
+                        width="8"
+                        height="8"
+                        viewBox="0 0 8 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.00001 5.59999C3.76667 5.59999 3.53334 5.50999 3.35667 5.33333L1.18334 3.15999C1.08667 3.06333 1.08667 2.90333 1.18334 2.80666C1.28001 2.70999 1.44001 2.70999 1.53667 2.80666L3.71001 4.97999C3.87001 5.13999 4.13001 5.13999 4.29001 4.97999L6.46334 2.80666C6.56001 2.70999 6.72001 2.70999 6.81667 2.80666C6.91334 2.90333 6.91334 3.06333 6.81667 3.15999L4.64334 5.33333C4.46667 5.50999 4.23334 5.59999 4.00001 5.59999Z"
+                          fill="white"
+                        ></path>
+                      </svg>
+                      <small class="prl-5" style="color: #acb1c6">Fa</small>
+                      <svg
+                        class="language-logo"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <circle
+                          cx="8"
+                          cy="8"
+                          r="8"
+                          fill="url(#pattern0)"
+                        ></circle>
+                        <defs>
+                          <pattern
+                            id="pattern0"
+                            patternContentUnits="objectBoundingBox"
+                            width="1"
+                            height="1"
+                          >
+                            <use
+                              xlink:href="#image0_6_2057"
+                              transform="translate(-0.0844238 -0.143226) scale(0.00541295)"
+                            ></use>
+                          </pattern>
+                          <image
+                            id="image0_6_2057"
+                            width="219"
+                            height="230"
+                            xlink:href="data:image/png;base64,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"
+                          ></image>
+                        </defs>
+                      </svg>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="login col-8 flex-center">
+                <svg
+                  class="mr-5 ml-5"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.4917 1.66666H6.50841C3.47508 1.66666 1.66675 3.47499 1.66675 6.50832V13.4917C1.66675 15.8333 2.74175 17.4417 4.63341 18.05C5.18341 18.2417 5.81675 18.3333 6.50841 18.3333H13.4917C14.1834 18.3333 14.8167 18.2417 15.3667 18.05C17.2584 17.4417 18.3334 15.8333 18.3334 13.4917V6.50832C18.3334 3.47499 16.5251 1.66666 13.4917 1.66666ZM17.0834 13.4917C17.0834 15.275 16.3834 16.4 14.9751 16.8667C14.1667 15.275 12.2501 14.1417 10.0001 14.1417C7.75008 14.1417 5.84175 15.2667 5.02508 16.8667H5.01675C3.62508 16.4167 2.91675 15.2833 2.91675 13.5V6.50832C2.91675 4.15832 4.15841 2.91666 6.50841 2.91666H13.4917C15.8417 2.91666 17.0834 4.15832 17.0834 6.50832V13.4917Z"
+                    fill="#F4F4F4"
+                  ></path>
+                  <path
+                    d="M10.0002 6.66666C8.35018 6.66666 7.01685 7.99999 7.01685 9.64999C7.01685 11.3 8.35018 12.6417 10.0002 12.6417C11.6502 12.6417 12.9835 11.3 12.9835 9.64999C12.9835 7.99999 11.6502 6.66666 10.0002 6.66666Z"
+                    fill="#F4F4F4"
+                  ></path>
+                </svg>
+                <span>ورود / ثبت نام</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-6 row">
-        <div class="col-2"><a href="">delneveshteh</a></div>
-        <div class="col-2"><a href="">comments</a></div>
-        <div class="col-2"><a href="">comments</a></div>
-        <div class="col-2"><a href="">comments</a></div>
-      </div>
-      <div class="logo col-2"><p>logo</p></div>
-    </div>
+    </header>
 
     <div class="row">
       <div
