@@ -37,6 +37,16 @@
         width: 300px;
         height: auto;
       }
+      .shadow {
+        z-index: -1;
+        position: absolute;
+        width: 834px;
+        height: 833px;
+        left: calc(50% - 834px / 2 - 9px);
+        top: -516px;
+        background-color: rgba(13, 98, 138, 0.8);
+        filter: blur(156px);
+      }
       .nav-menu {
         display: flex;
         margin: 0%;
@@ -115,6 +125,7 @@
         margin: 0px 32px;
       }
       .header-nav {
+        background-color: #0e2835;
         margin-top: 46px;
         border: solid 1px #165776 !important;
       }
@@ -137,9 +148,26 @@
       .player3,
       .player4 {
         height: 62px;
+        border-radius: 16px;
+      }
+      .player1 {
+        border: 1px solid #dbaa39;
+      }
+      .player2 {
+        border: 1px solid #64cb77;
+      }
+      .player3 {
+        border: 1px solid #f30000;
+      }
+      .player4 {
+        border: 1px solid #64cb77;
       }
       .video {
         padding: 23px;
+      }
+      .video-container {
+        background-color: #0e2835;
+        border: 1px solid #165776;
       }
       .video video {
         border-radius: 23px;
@@ -147,6 +175,7 @@
       }
     </style>
     <header id="header-container">
+      <span class="shadow"></span>
       <div class="header-container">
         <div class="row header-nav border d-flex p-2">
           <div class="col-2 align-self-center">
@@ -474,16 +503,16 @@
       </div>
     </header>
     <div class="body-container">
-      <div class="row mt-5 border">
+      <div class="row mt-5 video-container border">
         <div class="col-md-4 justify-content-center p-3">
           <div class="col suggestion-container border">
             <div class="suggestion"></div>
           </div>
-          <div class="col-12 player1 border mt-3">media</div>
-          <div class="col-12 player3 border mt-3">media</div>
-          <div class="col-12 player2 border mt-3">media</div>
-          <div class="col-12 player4 border mt-3">media</div>
-          <div class="col-12 player4 border mt-3">media</div>
+          <div class="col-12 player1 mt-3">media</div>
+          <div class="col-12 player2 mt-3">media</div>
+          <div class="col-12 player3 mt-3">media</div>
+          <div class="col-12 player4 mt-3">media</div>
+          <div class="col-12 player4 mt-3">media</div>
         </div>
         <div class="col-md-8 col-sm-12 video">
           <video id="videoPlayer" class="w-100 h-100" controls="" loop="">
