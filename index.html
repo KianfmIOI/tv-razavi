@@ -39,6 +39,7 @@
       }
       .nav-menu {
         display: flex;
+        margin: 0%;
       }
       .nav-menu li {
         color: #c8d0f1;
@@ -50,7 +51,7 @@
         cursor: pointer;
       }
       .border {
-        border-color: #6563e6;
+        border: solid 1px #165776 !important;
         border-radius: 24px;
       }
       .videos {
@@ -59,17 +60,20 @@
         overflow-x: auto;
 
         border-radius: 30px;
-
-        border: 1px solid #6563e6;
       }
       .logo-header {
         max-width: 100%;
         max-height: 50px;
       }
+      .sl-nav ul {
+        margin: 0;
+        padding: 0;
+      }
       .sl-nav li {
         list-style: none;
         position: relative;
         display: inline-block;
+        display: flex;
       }
       .center-div {
         display: flex;
@@ -87,8 +91,15 @@
         border-radius: 15px;
         color: #ffffff;
         padding: 9px;
+        height: 40px;
         align-content: center;
       }
+      .search-input {
+        width: 128px;
+        height: 28px;
+        border: solid 1px black;
+      }
+
       .search-but {
         cursor: pointer;
         width: 30px;
@@ -105,10 +116,37 @@
       }
       .header-nav {
         margin-top: 46px;
-        border: solid 1px;
+        border: solid 1px #165776 !important;
+      }
+      .fas {
+        size: 50%;
+      }
+      .body-container {
+        margin: 0 32px;
+      }
+      .suggestion-container {
+        background-color: #0f3446;
+      }
+      .suggestion {
+        height: 150px;
+        margin-top: 14px;
+        background-color: transparent;
+      }
+      .player1,
+      .player2,
+      .player3,
+      .player4 {
+        height: 62px;
+      }
+      .video {
+        padding: 23px;
+      }
+      .video video {
+        border-radius: 23px;
+        border: 1px solid #165776;
       }
     </style>
-    <header>
+    <header id="header-container">
       <div class="header-container">
         <div class="row header-nav border d-flex p-2">
           <div class="col-2 align-self-center">
@@ -331,11 +369,8 @@
               </li>
             </ul>
           </div>
-          <div class="col-4 d-flex justify-content-center gap-5">
+          <div class="col-4 d-flex justify-content-center">
             <div class="col-6 center-div">
-              <button class="search-but" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
               <form
                 class="center-div gap-1"
                 action="https://tv.razavi.ir/fa/search"
@@ -349,11 +384,15 @@
                   placeholder="جستجو کنید"
                 />
               </form>
+              <button class="search-but" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
             </div>
             <div
+              style="position: relative"
               class="col-6 center-div d-flex align-items-center justify-content-center"
             >
-              <div class="col-4">
+              <div class="col-4 flex-center">
                 <div class="sl-nav">
                   <ul>
                     <li class="center-div">
@@ -409,7 +448,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="login col-8 flex-center">
+              <div class="login flex-center col-8">
                 <svg
                   class="mr-5 ml-5"
                   width="20"
@@ -434,52 +473,52 @@
         </div>
       </div>
     </header>
+    <div class="body-container">
+      <div class="row mt-5 border">
+        <div class="col-md-4 justify-content-center p-3">
+          <div class="col suggestion-container border">
+            <div class="suggestion"></div>
+          </div>
+          <div class="col-12 player1 border mt-3">media</div>
+          <div class="col-12 player3 border mt-3">media</div>
+          <div class="col-12 player2 border mt-3">media</div>
+          <div class="col-12 player4 border mt-3">media</div>
+          <div class="col-12 player4 border mt-3">media</div>
+        </div>
+        <div class="col-md-8 col-sm-12 video">
+          <video id="videoPlayer" class="w-100 h-100" controls="" loop="">
+            <source id="sourceVideoPlayer" src="" type="video/mp4" />
+          </video>
+        </div>
+      </div>
 
-    <div class="row">
-      <div
-        class="col-lg-6 col-md-12 justify-content-center p-5 container border"
-      >
-        <img src="./items/R.jfif" alt="" id="video" />
+      <div class="container">
+        <div class="title bg-primary text">ngd</div>
       </div>
-      <div class="col justify-content-center border">
-        <div class="col container p-2 border">border</div>
-        <div class="col container p-2 border">border</div>
-        <div class="col container p-2 border">border</div>
-        <div class="col container p-2 border">border</div>
-      </div>
-    </div>
 
-    <div class="container">
-      <div class="title bg-primary text">ngd</div>
-      <div class="videos p-5">
-        <img src="./items/R.jfif" alt="" class="images p-5 border-radius" />
-        <img src="./items/R.jfif" alt="" class="images p-5 border-radius" />
-        <img src="./items/R.jfif" alt="" class="images p-5 border-radius" />
-        <img src="./items/R.jfif" alt="" class="images p-5 border-radius" />
-        <img src="./items/R.jfif" alt="" class="images p-5 border-radius" />
-        <img src="./items/R.jfif" alt="" class="images p-5 border-radius" />
-        <img src="./items/R.jfif" alt="" class="images p-5 border-radius" />
-        <img src="./items/R.jfif" alt="" class="images p-5 border-radius" />
-        <img src="./items/R.jfif" alt="" class="images p-5 border-radius" />
-      </div>
       <div
         id="smFooter"
         class="mobile-navbar z-3 row justify-content-spaced-around border position-absolute"
       >
-        <div class="col-3"><a href="">comments</a></div>
-        <div class="col-3"><a href="">comments</a></div>
-        <div class="col-3"><a href="">comments</a></div>
-        <div class="col-3"><a href="">comments</a></div>
+        <div class="col"><a href="">comments</a></div>
+        <div class="col"><a href="">comments</a></div>
+        <div class="col"><a href="">comments</a></div>
+        <div class="col"><a href="">comments</a></div>
       </div>
     </div>
     <script>
       function showFooter() {
-        if (window.innerWidth < "600px") {
+        if (window.innerWidth < 600) {
           document.getElementById("smFooter").style.display = "block";
+          document.getElementsById("header-container").style.display = "none";
         } else {
           document.getElementById("smFooter").style.display = "none";
+          document.getElementsById("header-container").style.display = "block";
         }
       }
+      window.onload = showFooter;
+
+      window.onresize = showFooter;
     </script>
   </body>
 </html>
