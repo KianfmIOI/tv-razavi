@@ -961,12 +961,13 @@
 
       const leftBtn = document.getElementById("leftBtn");
       const rightBtn = document.getElementById("rightBtn");
+      const slider = document.querySelector(".sliderContents");
       leftBtn.addEventListener("click", () => {
-        sliderContents.scrollBy({ left: -300, behavior: "smooth" });
+        slider.scrollBy({ left: -292, behavior: "smooth" });
       });
 
       rightBtn.addEventListener("click", () => {
-        sliderContents.scrollBy({ left: 300, behavior: "smooth" });
+        slider.scrollBy({ left: 292, behavior: "smooth" });
       });
     </script>
   </body>
