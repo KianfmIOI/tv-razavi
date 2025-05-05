@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>پخش زنده</title>
+    <!-- Persian Font -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -24,7 +36,19 @@
     <style>
       body {
         background-color: #0e2835;
-        font-family: Qs_Iranyekan;
+      }
+      body {
+        font-family: Vazir, sans-serif;
+        margin: 0;
+      }
+
+      nav {
+        background-color: #1a1a1a;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
       }
       #video {
         height: 200px;
@@ -34,7 +58,7 @@
       }
       a {
         text-decoration: none;
-        color: aliceblue;
+        color: #c8d0f1 !important;
       }
       p {
         margin: 0%;
@@ -60,7 +84,6 @@
         margin: 0%;
       }
       .nav-menu li {
-        color: #c8d0f1;
         font-size: 16px;
         padding-left: 18px;
         display: flex;
@@ -80,8 +103,9 @@
         border-radius: 30px;
       }
       .logo-header {
+        padding: 5px;
         max-width: 100%;
-        max-height: 50px;
+        max-height: 100%;
       }
       .sl-nav ul {
         margin: 0;
@@ -327,10 +351,7 @@
       <div class="header-container">
         <div class="row header-nav border d-flex p-2">
           <div class="col-2 align-self-center">
-            <img
-              src="https://tv.razavi.ir/assets/FrontEnd/images/logo-scroll.png"
-              class="logo-header"
-            />
+            <img src="./items/logo-scroll.png" class="logo-header" />
           </div>
           <div class="col-6 d-flex align-items-center justify-content-center">
             <ul class="nav-menu">
