@@ -84,7 +84,7 @@
         margin: 0%;
       }
       .nav-menu li {
-        font-size: 16px;
+        font-size: 11px;
         padding-left: 18px;
         display: flex;
         justify-content: center;
@@ -136,16 +136,24 @@
         height: 40px;
         align-content: center;
       }
+      .login svg {
+        width: 15px;
+        margin: 0px 5px;
+        height: 15px;
+      }
       .search-input {
-        width: 200px;
-        height: 36px;
-        border: solid 1px black;
+        padding: 4px 6px 4px 0px;
+        width: 128px;
+        height: 28px;
+        border: solid 1px #fefdfe;
+        font: 13px;
       }
 
       .search-but {
         cursor: pointer;
         width: 30px;
         height: 30px;
+        border: solid 1px #acb1c6;
         border-radius: 50%;
         background-color: transparent;
         color: whitesmoke;
@@ -160,6 +168,10 @@
         background-color: #0e2835;
         margin-top: 46px;
         border: solid 1px #165776 !important;
+      }
+      .search-but svg {
+        width: 10px;
+        height: 10px;
       }
       .fas {
         size: 50%;
@@ -345,11 +357,21 @@
         width: 20px;
         height: 20px;
       }
+      .iconSize {
+        inline-size: 14px;
+        margin-left: 3px;
+      }
+      .languages {
+        color: #acb1c6;
+        padding-right: 3px;
+        font-size: 12px;
+        padding-left: 3px;
+      }
     </style>
     <header id="header-container">
       <span class="shadow"></span>
       <div class="header-container">
-        <div class="row header-nav border d-flex p-2">
+        <div class="row header-nav border d-flex p-2 justify-content-center">
           <div class="col-2 align-self-center">
             <img src="./items/logo-scroll.png" class="logo-header" />
           </div>
@@ -358,7 +380,7 @@
               <li>
                 <a href="https://tv.razavi.ir/fa" class="a-header">
                   <svg
-                    class="icon-size"
+                    class="iconSize"
                     width="20"
                     height="20"
                     viewBox="0 0 20 20"
@@ -379,6 +401,7 @@
                   class="a-header"
                 >
                   <svg
+                    class="iconSize"
                     class="icon-size"
                     width="20"
                     height="20"
@@ -436,6 +459,7 @@
                   class="a-header"
                 >
                   <svg
+                    class="iconSize"
                     class="icon-size"
                     width="20"
                     height="20"
@@ -477,6 +501,7 @@
                   class="a-header"
                 >
                   <svg
+                    class="iconSize"
                     class="icon-size"
                     width="20"
                     height="20"
@@ -507,6 +532,7 @@
               <li>
                 <a href="#دلنوشته" class="a-header">
                   <svg
+                    class="iconSize"
                     class="icon-size"
                     width="20"
                     height="20"
@@ -541,6 +567,7 @@
               <li class="last-li">
                 <a href="https://tv.razavi.ir/fa/contact-us" class="a-header">
                   <svg
+                    class="iconSize"
                     class="icon-size"
                     width="20"
                     height="20"
@@ -570,7 +597,9 @@
               </li>
             </ul>
           </div>
-          <div class="col-4 d-flex justify-content-center">
+          <div
+            class="col-4 d-flex justify-content-center align-self-center row"
+          >
             <div class="col-6 center-div">
               <form
                 class="center-div gap-1"
@@ -586,7 +615,18 @@
                 />
               </form>
               <button class="search-but" type="submit">
-                <i class="fas fa-search"></i>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.71547 3.2385C7.9271 1.45014 5.02685 1.45014 3.23849 3.2385C1.45013 5.02686 1.45013 7.92712 3.23849 9.71548C4.82274 11.2997 7.2798 11.4786 9.06233 10.2559L11.2919 12.7499C11.671 13.1756 12.33 13.1931 12.7324 12.7907L12.7907 12.7324C13.1931 12.33 13.1756 11.671 12.7498 11.292L10.2559 9.06234C11.4805 7.27786 11.2997 4.82276 9.71547 3.2385ZM8.60357 8.60358C7.42947 9.77768 5.52448 9.77768 4.35038 8.60358C3.17629 7.42949 3.17628 5.52449 4.35038 4.35039C5.52448 3.1763 7.42947 3.1763 8.60357 4.3504C9.77961 5.52644 9.77767 7.42949 8.60357 8.60358Z"
+                    fill="#FEFEFF"
+                  ></path>
+                </svg>
               </button>
             </div>
             <div
@@ -609,7 +649,7 @@
                           fill="white"
                         ></path>
                       </svg>
-                      <small class="prl-5" style="color: #acb1c6">Fa</small>
+                      <small class="languages">Fa</small>
                       <svg
                         class="language-logo"
                         width="16"
@@ -667,14 +707,14 @@
                     fill="#F4F4F4"
                   ></path>
                 </svg>
-                <span>ورود / ثبت نام</span>
+                <span style="font-size: 10px">ورود / ثبت نام</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </header>
-    <div class="body-container">
+    <div style="display: none" class="body-container">
       <div class="row mt-5 video-container border">
         <div class="col-md-4 justify-content-center p-3">
           <div class="col suggestion-container border p-3">
