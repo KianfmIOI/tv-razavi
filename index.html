@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>پخش زنده</title>
-    <!-- Persian Font -->
+    <link rel="stylesheet" href="./style.css" />
     <link
       href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css"
       rel="stylesheet"
     />
 
-    <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -34,6 +33,10 @@
   </head>
   <body dir="rtl">
     <style>
+      * {
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
         background-color: #0e2835;
       }
@@ -67,6 +70,14 @@
         size: 300px;
         width: 300px;
         height: auto;
+      }
+      @media screen and (max-width: 1000px) {
+        header.header {
+          display: none;
+        }
+        div.miniHeader .shadow {
+          height: 1036px;
+        }
       }
       .shadow {
         z-index: -1;
@@ -133,18 +144,17 @@
         border-radius: 15px;
         color: #ffffff;
         padding: 9px;
-        height: 40px;
         align-content: center;
       }
       .login svg {
-        width: 15px;
+        width: 26px;
         margin: 0px 5px;
-        height: 15px;
+        height: 26px;
       }
       .search-input {
         padding: 4px 6px 4px 0px;
-        width: 128px;
-        height: 28px;
+        width: 200px;
+        height: 36px;
         border: solid 1px #fefdfe;
         font: 13px;
       }
@@ -368,8 +378,9 @@
         height: 20px;
       }
       .iconSize {
-        inline-size: 14px;
-        margin-left: 3px;
+        width: 25px;
+        margin-left: 10px;
+        height: 25px;
       }
       .languages {
         color: #acb1c6;
@@ -377,12 +388,59 @@
         font-size: 12px;
         padding-left: 3px;
       }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      .sidenav {
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.275);
+        height: 100%;
+        position: fixed;
+        z-index: 7;
+        top: 0;
+        left: 0;
+        width: 0;
+        text-align: center;
+        overflow-x: hidden;
+        background-color: #0e2835;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 14px;
+        text-align: left;
+
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav .closeBtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      .mobile-navbar {
+        color: #c8d0f1;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+      }
     </style>
-    <header id="header-container">
+    <header id="header-container" class="header">
       <span class="shadow"></span>
       <div class="header-container">
         <div class="row header-nav border d-flex p-2 justify-content-center">
-          <div class="col-2 align-self-center">
+          <div class="col-2 align-self-center" style="margin-left: 10px">
             <img src="./items/logo-scroll.png" class="logo-header" />
           </div>
           <div class="col-6 d-flex align-items-center justify-content-center">
@@ -717,13 +775,124 @@
                     fill="#F4F4F4"
                   ></path>
                 </svg>
-                <span style="font-size: 10px">ورود / ثبت نام</span>
+                <span style="font-size: 18px">ورود / ثبت نام</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </header>
+    <div class="miniHeader d-lg-none" style="margin: 0px 32px">
+      <span class="shadow"></span>
+      <div class="row justify-content-center p-2" style="margin-top: 15px">
+        <div class="row mobile-navbar">
+          <div class="col-4 align-self-center">
+            <img src="./items/logo-scroll.png" class="logo-header" />
+          </div>
+          <div class="col-4 d-flex flex-row-reverse text-right">
+            <span style="font-size: 30px; cursor: pointer" onclick="openNav()">
+              <svg
+                class="navbar-mobile-icon"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 8.25H3C2.59 8.25 2.25 7.91 2.25 7.5C2.25 7.09 2.59 6.75 3 6.75H21C21.41 6.75 21.75 7.09 21.75 7.5C21.75 7.91 21.41 8.25 21 8.25Z"
+                  fill="white"
+                ></path>
+                <path
+                  d="M21 13.25H3C2.59 13.25 2.25 12.91 2.25 12.5C2.25 12.09 2.59 11.75 3 11.75H21C21.41 11.75 21.75 12.09 21.75 12.5C21.75 12.91 21.41 13.25 21 13.25Z"
+                  fill="white"
+                ></path>
+                <path
+                  d="M21 18.25H3C2.59 18.25 2.25 17.91 2.25 17.5C2.25 17.09 2.59 16.75 3 16.75H21C21.41 16.75 21.75 17.09 21.75 17.5C21.75 17.91 21.41 18.25 21 18.25Z"
+                  fill="white"
+                ></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sidenav" id="sidenav" style="left: 0px !important">
+      <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="#" class="px-5 py-3">
+        <img src="./items/logo-scroll.png" class="logo-header" />
+      </a>
+      <a href="https://tv.razavi.ir/fa" class="a-header">
+        خانه
+
+        <svg
+          class="icon-size"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.3584 6.67501L11.9001 2.30834C10.8334 1.45834 9.16672 1.45001 8.10838 2.30001L2.65005 6.67501C1.86672 7.30001 1.39172 8.55 1.55838 9.53334L2.60838 15.8167C2.85005 17.225 4.15838 18.3333 5.58338 18.3333H14.4167C15.8251 18.3333 17.1584 17.2 17.4001 15.8083L18.4501 9.52501C18.6001 8.55001 18.1251 7.30001 17.3584 6.67501ZM10.6251 15C10.6251 15.3417 10.3417 15.625 10.0001 15.625C9.65838 15.625 9.37505 15.3417 9.37505 15V12.5C9.37505 12.1583 9.65838 11.875 10.0001 11.875C10.3417 11.875 10.6251 12.1583 10.6251 12.5V15Z"
+            fill="#F4F4F4"
+          ></path>
+        </svg>
+      </a>
+      <a href="https://tv.razavi.ir/fa" class="a-header">
+        خانه
+
+        <svg
+          class="icon-size"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.3584 6.67501L11.9001 2.30834C10.8334 1.45834 9.16672 1.45001 8.10838 2.30001L2.65005 6.67501C1.86672 7.30001 1.39172 8.55 1.55838 9.53334L2.60838 15.8167C2.85005 17.225 4.15838 18.3333 5.58338 18.3333H14.4167C15.8251 18.3333 17.1584 17.2 17.4001 15.8083L18.4501 9.52501C18.6001 8.55001 18.1251 7.30001 17.3584 6.67501ZM10.6251 15C10.6251 15.3417 10.3417 15.625 10.0001 15.625C9.65838 15.625 9.37505 15.3417 9.37505 15V12.5C9.37505 12.1583 9.65838 11.875 10.0001 11.875C10.3417 11.875 10.6251 12.1583 10.6251 12.5V15Z"
+            fill="#F4F4F4"
+          ></path>
+        </svg>
+      </a>
+      <a href="https://tv.razavi.ir/fa" class="a-header">
+        خانه
+
+        <svg
+          class="icon-size"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.3584 6.67501L11.9001 2.30834C10.8334 1.45834 9.16672 1.45001 8.10838 2.30001L2.65005 6.67501C1.86672 7.30001 1.39172 8.55 1.55838 9.53334L2.60838 15.8167C2.85005 17.225 4.15838 18.3333 5.58338 18.3333H14.4167C15.8251 18.3333 17.1584 17.2 17.4001 15.8083L18.4501 9.52501C18.6001 8.55001 18.1251 7.30001 17.3584 6.67501ZM10.6251 15C10.6251 15.3417 10.3417 15.625 10.0001 15.625C9.65838 15.625 9.37505 15.3417 9.37505 15V12.5C9.37505 12.1583 9.65838 11.875 10.0001 11.875C10.3417 11.875 10.6251 12.1583 10.6251 12.5V15Z"
+            fill="#F4F4F4"
+          ></path>
+        </svg>
+      </a>
+      <a href="https://tv.razavi.ir/fa" class="a-header">
+        خانه
+
+        <svg
+          class="icon-size"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.3584 6.67501L11.9001 2.30834C10.8334 1.45834 9.16672 1.45001 8.10838 2.30001L2.65005 6.67501C1.86672 7.30001 1.39172 8.55 1.55838 9.53334L2.60838 15.8167C2.85005 17.225 4.15838 18.3333 5.58338 18.3333H14.4167C15.8251 18.3333 17.1584 17.2 17.4001 15.8083L18.4501 9.52501C18.6001 8.55001 18.1251 7.30001 17.3584 6.67501ZM10.6251 15C10.6251 15.3417 10.3417 15.625 10.0001 15.625C9.65838 15.625 9.37505 15.3417 9.37505 15V12.5C9.37505 12.1583 9.65838 11.875 10.0001 11.875C10.3417 11.875 10.6251 12.1583 10.6251 12.5V15Z"
+            fill="#F4F4F4"
+          ></path>
+        </svg>
+      </a>
+    </div>
     <div style="display: none" class="body-container">
       <div class="row mt-5 video-container border">
         <div class="col-md-4 justify-content-center p-3">
@@ -1018,17 +1187,13 @@
       </div>
     </div>
     <script>
-      function showFooter() {
-        if (window.innerWidth < 600) {
-          document.getElementById("smFooter").style.display = "block";
-          document.getElementsById("header-container").style.display = "none";
-        } else {
-          document.getElementById("smFooter").style.display = "none";
-          document.getElementsById("header-container").style.display = "block";
-        }
+      function openNav() {
+        document.getElementById("sidenav").style.width = "250px";
       }
-      window.onload = showFooter;
-      window.onresize = showFooter;
+
+      function closeNav() {
+        document.getElementById("sidenav").style.width = "0%";
+      }
 
       const leftBtn = document.getElementById("leftBtn");
       const rightBtn = document.getElementById("rightBtn");
